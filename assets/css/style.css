@@ -33,9 +33,9 @@
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    background-color: #e0e0e0;
+    background-color: #eeeeee;
     box-shadow: 5px 5px 5px grey;
-    height: 100px;
+    height: 80px;
 }
 
 #disconnection {
@@ -46,4 +46,38 @@
     border: none;
     position: absolute;
     right: 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+#messagesGroup {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    border: #d4d4d4 0.5px solid;
+    width: 70%;
+    margin: auto;
+    height: 82vh;
+}
+
+.input-group {
+    width: 70%;
+    margin: auto;
+}
+
+.width20 {
+    width: 20%;
+}
+
+.text {
+    width: 60%;
+}
+
+.colorGrey {
+    color: #bcbcbc;
+}
+
+.colorBlue  {
+    color: #0d6efd;
 }

@@ -30,9 +30,9 @@ if (isset($_POST["pseudo"], $_POST["password"])) {
         }
         else {
             echo '<body onLoad="alert(\'Membre non reconnu !\')">';
+            echo "Aucun compte associé à ce nom d'utilistaur ou mot de passe";
             echo '<meta http-equiv="refresh" content="0;URL=../../index.php">';
         }
     }
 }
 
-echo "Aucun compte associé à ce nom d'utilistaur ou mot de passe";

@@ -1,0 +1,49 @@
+#connection_registration {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#buttonConnection, #buttonRegistration {
+    margin: 200px 100px;
+    padding: 30px;
+    font-size: 40px;
+}
+
+#miniChat, #miniChat2 {
+    margin : 10px 0 10px 50px;
+    color: #0d6efd;
+    font-size: 60px;
+}
+
+#miniChat2 {
+    font-size: 45px;
+    position: absolute;
+    left: 40px;
+}
+
+#pseudoAccount {
+    font-size: 30px;
+    position: absolute;
+    right: 250px;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #e0e0e0;
+    box-shadow: 5px 5px 5px grey;
+    height: 100px;
+}
+
+#disconnection {
+    background-color: red;
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    border: none;
+    position: absolute;
+    right: 50px;
+}

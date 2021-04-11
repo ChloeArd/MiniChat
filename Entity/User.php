@@ -1,6 +1,6 @@
 <?php
 
-namespace Minichat\Entity;
+namespace MiniChat\Entity;
 
 class User {
 

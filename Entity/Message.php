@@ -1,8 +1,8 @@
 <?php
 
-namespace Minichat\Entity;
+namespace MiniChat\Entity;
 
-use Minichat\Entity\User;
+use MiniChat\Entity\User;
 
 class Message {
 
@@ -61,16 +61,16 @@ class Message {
     }
 
     /**
-     * @return \Minichat\Entity\User|null
+     * @return \MiniChat\Entity\User|null
      */
-    public function getUser(): ?\Minichat\Entity\User {
+    public function getUser(): ?\MiniChat\Entity\User {
         return $this->user;
     }
 
     /**
-     * @param \Minichat\Entity\User|null $user
+     * @param \MiniChat\Entity\User|null $user
      */
-    public function setUser(?\Minichat\Entity\User $user): void {
+    public function setUser(?\MiniChat\Entity\User $user): void {
         $this->user = $user;
     }
 }

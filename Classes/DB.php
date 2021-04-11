@@ -1,6 +1,6 @@
 <?php
 
-namespace APP\Classes;
+namespace MiniChat\Classes;
 
 use PDO;
 use PDOException;

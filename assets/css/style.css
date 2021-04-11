@@ -34,6 +34,10 @@
     font-size: 60px;
 }
 
+#miniChat {
+    margin-left: 50px;
+}
+
 #miniChat2 {
     font-size: 45px;
     position: absolute;
@@ -74,7 +78,7 @@ a {
 #messagesGroup {
     overflow-x: hidden;
     overflow-y: scroll;
-    border: #d4d4d4 0.5px solid;
+    border: #d4d4d4 1px solid;
     width: 70%;
     margin: auto;
     height: 82vh;
@@ -101,7 +105,7 @@ a {
 .messages {
     padding: 20px 5px 20px 5px;
     border-radius: 10px;
-    background-color: #eeeeee;
+    background-color: #f2f4f5;
     margin: 10px;
 }
 

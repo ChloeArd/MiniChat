@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+date_default_timezone_set("Europe/Paris");
 ?>
 <!doctype html>
 <html lang="fr">
@@ -24,27 +26,13 @@ session_start();
 
 <main>
     <div id="messagesGroup">
-        <div>
-            <?php
-            for ($i = 0; $i < 50; $i++) {
-                echo "
-               
-                <div class='flexColumn messages'>
-                    <div class='flexRow width100'>
-                           <p class='width30 colorBlue bold'>" . $_SESSION['pseudo'] . "  </p>
-                           <p class='colorGrey'>Vendredi 9 avril à 10:58</p>
-                    </div>
-                    <p class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur aut 
-                    corporis dolore harum inventore minus, molestias, nam nesciunt nihil nostrum optio porro qui quia quibusdam quos repudiandae sunt, voluptate?</p>
-                </div>
-                ";
-            }
-            ?>
-        </div>
+
     </div>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Envoyer un message..." aria-label="Recipient's username" aria-describedby="button-addon2">
-        <button class="btn btn-outline-primary" type="button" id="button-addon2">Envoyer</button>
+        <input hidden type="text" id="inputIdPseudo" value="<?= $_SESSION['id'] ?>">
+        <input id="inputMessage" type="text" class="form-control" placeholder="Envoyer un message..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input hidden  type="text" id="inputDate" value="<?= date('Y-m-d H:i:s')?>">
+        <button class="btn btn-outline-primary" type="button" id="buttonSend">Envoyer</button>
     </div>
 </main>
 

@@ -69,12 +69,12 @@ class MessageManager {
      */
     public function addMessage(string $message,string $date,int $user): bool{
         $request = DB::getInstance()->prepare("
-            INSERT INTO student (firstname, lastname, school_fk)
-              VALUES (:firstname, :lastname, :school)
+            INSERT INTO message (message, date, user_fk)
+              VALUES (:message, :date, :user_fk)
         ");
-        $request->bindParam(':firstname', $firstname);
-        $request->bindParam(':lastname', $lastname);
-        $request->bindParam('school', $school, PDO::PARAM_INT);
+        $request->bindParam(':message', $message);
+        $request->bindParam(':date', $date);
+        $request->bindParam(':user_fk', $user, PDO::PARAM_INT);
         $request->execute();
         return intval(DB::getInstance()->lastInsertId()) !== 0;
     }

@@ -1,6 +1,6 @@
 <?php
 
-use APP\Classes\DB;
+use MiniChat\Classes\DB;
 
 include "functions.php";
 require "../../Classes/DB.php";

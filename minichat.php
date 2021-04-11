@@ -10,6 +10,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css"/>
     <title>MiniChat</title>
 </head>
@@ -18,7 +19,7 @@ session_start();
 <header id="menu">
     <h1 id="miniChat2">MiniChat <i class="fas fa-comments warning"></i></h1>
     <p id="pseudoAccount"><i class="fas fa-user-circle"></i> <?= $_SESSION["pseudo"]?></p>
-    <a href="assets/php/disconnection.php" id="disconnection">Déconnexion</a>
+    <a href="assets/php/disconnection.php" id="disconnection"><i class="fas fa-power-off"></i></a>
 </header>
 
 <main>

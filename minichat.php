@@ -24,22 +24,23 @@ session_start();
 
 <main>
     <div id="messagesGroup">
-        <table class="table table-striped table-hover">
-            <tbody>
+        <div>
             <?php
             for ($i = 0; $i < 50; $i++) {
                 echo "
-                <tr>
-                    <th scope='row' class='width20 colorBlue'>" . $_SESSION['pseudo'] . " : </th>
-                    <td class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur aut 
-                    corporis dolore harum inventore minus, molestias, nam nesciunt nihil nostrum optio porro qui quia quibusdam quos repudiandae sunt, voluptate?</td>
-                    <td class='width20 colorGrey'>Vendredi 9 avril à 10:58</td>
-                </tr>
+               
+                <div class='flexColumn messages'>
+                    <div class='flexRow width100'>
+                           <p class='width30 colorBlue bold'>" . $_SESSION['pseudo'] . "  </p>
+                           <p class='colorGrey'>Vendredi 9 avril à 10:58</p>
+                    </div>
+                    <p class='text'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto aspernatur aut 
+                    corporis dolore harum inventore minus, molestias, nam nesciunt nihil nostrum optio porro qui quia quibusdam quos repudiandae sunt, voluptate?</p>
+                </div>
                 ";
             }
             ?>
-            </tbody>
-        </table>
+        </div>
     </div>
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Envoyer un message..." aria-label="Recipient's username" aria-describedby="button-addon2">

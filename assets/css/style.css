@@ -4,6 +4,24 @@
     width: 100%;
 }
 
+.flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.flexRow {
+    display: flex;
+    flex-direction: row;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.width100 {
+    width: 100%;
+}
+
 #buttonConnection, #buttonRegistration {
     margin: 200px 100px;
     padding: 30px;
@@ -71,8 +89,20 @@ a {
     width: 20%;
 }
 
+.width30 {
+    width: 30%;
+}
+
 .text {
-    width: 60%;
+    width: 85%;
+    margin: auto;
+}
+
+.messages {
+    padding: 20px 5px 20px 5px;
+    border-radius: 10px;
+    background-color: #eeeeee;
+    margin: 10px;
 }
 
 .colorGrey {

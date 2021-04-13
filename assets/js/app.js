@@ -109,7 +109,6 @@ function charger() {
             'url': "/api/charger/index.php?id=" + lastIdMessage, // We pass the last ID to the load file
             'type': 'GET',
             'success': function (html) {
-                console.log(lastIdMessage)
                 $('#messagesGroup').prepend(html); // We add the new message at the end
             }
         });

@@ -8,7 +8,8 @@ use MiniChat\Entity\Message;
 use MiniChat\Manager\UserManager;
 use PDO;
 
-class MessageManager {
+class MessageManager
+{
 
     private UserManager $userManager;
 

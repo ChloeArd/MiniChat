@@ -27,7 +27,6 @@ class UserManager {
         return $user;
     }
 
-    //A VOIR SI UTILISATION DE CETTE FONCTION !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     /**
      * Return a users list.
      * @return array

@@ -90,7 +90,7 @@ a {
     border: #d4d4d4 1px solid;
     width: 70%;
     margin: auto;
-    height: 82vh;
+    height: 79vh;
 }
 
 .input-group {
@@ -170,6 +170,10 @@ a {
 
 #error {
     background-color: red;
+}
+
+.input-group {
+    margin-top: 20px;
 }
 
 @media screen and (max-width: 840px) {

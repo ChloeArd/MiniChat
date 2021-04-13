@@ -26,7 +26,7 @@ class MessageManager {
     public function getMessages(): array {
         $messages = [];
         // we retrieve the last 50 messages posted //ORDER BY id DESC LIMIT 0,50
-        $request = DB::getInstance()->prepare("SELECT * FROM message ");
+        $request = DB::getInstance()->prepare("SELECT * FROM message ORDER BY id DESC LIMIT 0,50");
         $request->execute();
         $messages_response = $request->fetchAll();
 
@@ -46,7 +46,7 @@ class MessageManager {
      * @return Message
      */
     public function getMessage(int $id): Message {
-        $request = DB::getInstance()->prepare("SELECT * FROM message WHERE id=:id");
+        $request = DB::getInstance()->prepare("SELECT * FROM message WHERE id = :id");
         $request->bindValue(':id', $id);
         $request->execute();
         $message_data = $request->fetch();

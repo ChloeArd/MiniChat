@@ -11,15 +11,14 @@ if (!empty($_GET['id'])) { // We check that the id is present and not empty
     $id = (int)$_GET['id']; // We make sure it's an integer
 
     // We get the messages with an id greater than the one given
-    $requete = $bdd->prepare("SELECT * FROM message WHERE id > $id ");
-    $requete->execute();
+    $requete = $bdd->prepare("SELECT * FROM message WHERE id > :id  ORDER BY id DESC");
+    $requete->execute(array('id' => $id));
 
     $messages = null;
 
     // We write all the new messages in a variable
-    foreach ($requete->fetchAll() as $donnees) {
+    while ($donnees = $requete->fetch()) {
         $idUser_fk = $donnees['user_fk'];
-        echo $donnees["user_fk"];
         //We retrieve the user who wrote the message thanks to the id user_fk store in message
         $requete2 = $bdd->prepare("SELECT * FROM user WHERE  id = $idUser_fk");
         $requete2->execute();

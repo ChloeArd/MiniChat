@@ -19,11 +19,8 @@ xhr.onload = function () {
                 </div>
                 <p class='text'>${message.message}</p>
             </div>
-    `;
-    })
-    // The scroll goes directly at the bottom
-    messagesGroup.scrollTop = messagesGroup.scrollHeight;
-
+        `;
+    });
 }
 
 xhr.open('GET', '/api/messages');
@@ -71,24 +68,20 @@ if (buttonSend) {
         }
 
         //add a new messages in the end of "messagesGroup" after pressing send / "envoyer" -> so that it is dynamic.
-        $("#messagesGroup").append("<div class='flexColumn messages'>" +
+        /*$("#messagesGroup").append("<div class='flexColumn messages'>" +
             "<div class='flexRow width100'>" +
             "<p class='width30 colorBlue bold'>" + inputPseudo + "</p>" +
             "<p class='colorGrey'>" + dateMessage.toLocaleString() + "</p>" +
             "</div>" +
             "<p class='text'>" + inputMessage + "</p>" +
             "</div>");
-
-        // The scroll goes directly at the bottom
-        messagesGroup.scrollTop = messagesGroup.scrollHeight;
-
+            */
         document.getElementById("inputMessage").value = "";
 
     });
 }
 
 let buttonRefresh = document.getElementById("buttonRefresh");
-
 
 //Refresh the page for display the messages.
 if (buttonRefresh) {
@@ -111,16 +104,13 @@ if (document.getElementById("success")) {
 // We check if there are no new messages every 2s
 function charger() {
     setTimeout(function () {
-        let lastIdMessage = $('.messages:last-child').attr('id'); // We get the last ID
+        let lastIdMessage = $('.messages:first').attr('id'); // We get the last ID
         $.ajax({
             'url': "/api/charger/index.php?id=" + lastIdMessage, // We pass the last ID to the load file
             'type': 'GET',
             'success': function (html) {
                 console.log(lastIdMessage)
-                $('#messagesGroup').append(html); // We add the new message at the end
-
-                // The scroll goes directly at the bottom
-                messagesGroup.scrollTop = messagesGroup.scrollHeight;
+                $('#messagesGroup').prepend(html); // We add the new message at the end
             }
         });
         charger();

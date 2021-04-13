@@ -5,29 +5,26 @@ use MiniChat\Classes\DB;
 require_once "../../assets/php/functions.php";
 require_once "../../Classes/DB.php";
 
-// on se connecte à notre base de données
-
-if (!empty($_GET['id'])) { // on vérifie que l'id est bien présent et pas vide
+if (!empty($_GET['id'])) { // We check that the id is present and not empty
     $bdd = DB::getInstance();
 
-    $id = (int)$_GET['id']; // on s'assure que c'est un nombre entier
+    $id = (int)$_GET['id']; // We make sure it's an integer
 
-    // on récupère les messages ayant un id plus grand que celui donné
-    $requete = $bdd->prepare('SELECT * FROM message WHERE id > :id ');
-    $requete->execute(array("id" => $id));
-
-
-
+    // We get the messages with an id greater than the one given
+    $requete = $bdd->prepare("SELECT * FROM message WHERE id > $id ");
+    $requete->execute();
 
     $messages = null;
 
-    // on inscrit tous les nouveaux messages dans une variable
-    while ($donnees = $requete->fetch()) {
+    // We write all the new messages in a variable
+    foreach ($requete->fetchAll() as $donnees) {
         $idUser_fk = $donnees['user_fk'];
+        echo $donnees["user_fk"];
+        //We retrieve the user who wrote the message thanks to the id user_fk store in message
         $requete2 = $bdd->prepare("SELECT * FROM user WHERE  id = $idUser_fk");
         $requete2->execute();
 
-        while ($donnees2 = $requete2->fetch()) {
+        foreach ($requete2->fetchAll() as $donnees2) {
             $messages .= "<div id='" . $donnees['id'] . "' class='flexColumn messages'>
                 <div class='flexRow width100'>
                        <p class='width30 colorBlue bold'>" . $donnees2['pseudo'] . "</p>
@@ -37,12 +34,7 @@ if (!empty($_GET['id'])) { // on vérifie que l'id est bien présent et pas vide
             </div>";
         }
 
-
-
-
-
-
-        echo $messages; // enfin, on retourne les messages à notre script JS
+        echo $messages; // We return the messages to our JS script
     }
 }
 

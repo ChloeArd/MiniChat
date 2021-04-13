@@ -1,3 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+}
 #connection_registration {
     display: flex;
     justify-content: center;
@@ -127,6 +136,40 @@ a {
     top:0;
     left: 0;
     width: 100%;
+}
+
+.modal2, #closeModal {
+    position: absolute;
+    z-index: 9999;
+}
+
+.modal2 {
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    font-size: 22px;
+    text-align: center;
+    color: white;
+}
+
+#closeModal {
+    top: 5px;
+    right: 30px;
+    border: none;
+    background-color: grey;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#success {
+    background-color: lightgreen;
+}
+
+#error {
+    background-color: red;
 }
 
 @media screen and (max-width: 840px) {

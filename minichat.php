@@ -1,8 +1,19 @@
 <?php
 session_start();
-
 date_default_timezone_set("Europe/Paris");
 
+
+$return = "";
+$id = "";
+
+if (isset($_GET['success'])) {
+    $id = "success";
+    switch ($_GET['success']) {
+        case '0':
+            $return = "Vous êtes bien connecté(e) !";
+            break;
+    }
+}
 ?>
 <!doctype html>
 <html lang="fr">
@@ -18,6 +29,8 @@ date_default_timezone_set("Europe/Paris");
     <title>MiniChat</title>
 </head>
 <body>
+
+<div id='<?= $id?>' class='modal2 colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
 
 <header id="menu">
     <h1 id="miniChat2">MiniChat <i class="fas fa-comments warning"></i></h1>

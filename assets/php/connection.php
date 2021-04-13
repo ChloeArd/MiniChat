@@ -26,13 +26,15 @@ if (isset($_POST["email"], $_POST["password"])) {
             $_SESSION['password'] = $password;
             $_SESSION['email'] = $email;
 
-            header("Location: ../../minichat.php");
+            header("Location: ../../minichat.php?success=0");
         }
         else {
-            echo '<body onLoad="alert(\'Membre non reconnu !\')">';
             echo "Aucun compte associé à ce nom d'utilistaur ou mot de passe";
-            echo '<meta http-equiv="refresh" content="0;URL=../../index.php">';
+            header("Location: ../../index.php?error=2");
         }
     }
+}
+else {
+    header("Location: ../../index.php?error=3");
 }
 

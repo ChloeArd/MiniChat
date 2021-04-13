@@ -1,3 +1,42 @@
+<?php
+
+$return = "";
+$id = "";
+
+if (isset($_GET['error'])){
+    $id = "error";
+    switch ($_GET['error']){
+        case '0':
+            $return = "Email ou pseudo deja utilisé !";
+            break;
+        case '1':
+            $return = "L'email n'est pas valide !";
+            break;
+        case '2':
+            $return = "Aucun compte associé à cette email ou ce mot de passe";
+            break;
+        case '3':
+            $return = "Problème de connexion.";
+            break;
+        case '4':
+            $return = "Problème d'inscription.";
+            break;
+    }
+}
+elseif (isset($_GET['success'])) {
+    $id = "success";
+    switch ($_GET['success']) {
+        case '0':
+            $return = "Vous êtes bien inscrit(e) !";
+            break;
+        case '1':
+            $return = "Vous êtes bien déconnectée(e) !";
+            break;
+    }
+}
+
+
+?>
 <!doctype html>
 <html lang="fr">
 <head>
@@ -13,6 +52,7 @@
 </head>
 <body>
 
+    <div id='<?= $id?>' class='modal2 colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
     <h1 id="miniChat">MiniChat <i class="fas fa-comments warning"></i></h1>
 
     <main id="connection_registration">

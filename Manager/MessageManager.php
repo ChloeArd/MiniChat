@@ -13,7 +13,7 @@ class MessageManager {
     private UserManager $userManager;
 
     /**
-     * MessageManager constructor.
+     * UserManager constructor.
      */
     public function __construct() {
         $this->userManager = new UserManager();
@@ -25,18 +25,19 @@ class MessageManager {
      */
     public function getMessages(): array {
         $messages = [];
-        $request = DB::getInstance()->prepare("SELECT * FROM message");
+        // we retrieve the last 50 messages posted //ORDER BY id DESC LIMIT 0,50
+        $request = DB::getInstance()->prepare("SELECT * FROM message ");
         $request->execute();
         $messages_response = $request->fetchAll();
 
         if($messages_response) {
             foreach($messages_response as $data) {
                 $user = $this->userManager->getUser($data['user_fk']);
-                $users[] = new Message($data['id'], $data['message'], $data['date'], $user);
+                $messages[] = new Message($data['id'], $data['message'], $data['date'], $user);
             }
         }
 
-        return $users;
+        return $messages;
     }
 
     /**

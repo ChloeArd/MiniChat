@@ -30,12 +30,12 @@
                     <form method="post" action="./assets/php/connection.php">
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="pseudo" class="form-label">Pseudo</label>
-                                <input type="text" class="form-control" id="pseudo" name="pseudo">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" name="password" required>
                             </div>
                         </div>
                         <div class="modal-footer">
@@ -63,15 +63,15 @@
                         <div class="modal-body">
                             <div class="mb-3">
                                 <label for="pseudo" class="form-label">Pseudo</label>
-                                <input type="text" class="form-control" id="pseudo" name="pseudo">
+                                <input type="text" class="form-control" id="pseudo" name="pseudo" required>
                             </div>
                             <div class="mb-3">
                                 <label for="email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email">
+                                <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="password" name="password">
+                                <input type="password" class="form-control" id="password" name="password" required>
                             </div>
                         </div>
                         <div class="modal-footer">

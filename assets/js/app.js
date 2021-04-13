@@ -97,11 +97,20 @@ if (buttonRefresh) {
     });
 }
 
+charger();
 
+
+if (document.getElementById("error")) {
+    closeModal("error");
+}
+
+if (document.getElementById("success")) {
+    closeModal("success");
+}
+
+// We check if there are no new messages every 2s
 function charger() {
-
     setTimeout(function () {
-
         let lastIdMessage = $('.messages:last-child').attr('id'); // We get the last ID
         $.ajax({
             'url': "/api/charger/index.php?id=" + lastIdMessage, // We pass the last ID to the load file
@@ -114,22 +123,8 @@ function charger() {
                 messagesGroup.scrollTop = messagesGroup.scrollHeight;
             }
         });
-
         charger();
-
-    }, 2000); // We check if there are no new messages every 2s
-
-}
-
-charger();
-
-
-if (document.getElementById("error")) {
-    closeModal("error");
-}
-
-if (document.getElementById("success")) {
-    closeModal("success");
+    }, 2000);
 }
 
 /**

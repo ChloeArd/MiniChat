@@ -101,7 +101,7 @@ if (document.getElementById("success")) {
     closeModal("success");
 }
 
-// We check if there are no new messages every 2s
+// We check if there are no new messages in BDD every 2s, what makes the code dynamic.
 function charger() {
     setTimeout(function () {
         let lastIdMessage = $('.messages:first').attr('id'); // We get the last ID

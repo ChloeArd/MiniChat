@@ -35,10 +35,10 @@ xhr.send();
 
 buttonSend.addEventListener('click', function(e) {
     e.preventDefault();
-    const inputIdPseudo = document.getElementById('inputIdPseudo').value;
-    const inputPseudo = document.getElementById('inputPseudo').value;
-    const inputMessage = document.getElementById('inputMessage').value;
-    const dateMessage = document.getElementById('inputDate').value;
+    let inputIdPseudo = document.getElementById('inputIdPseudo').value;
+    let inputPseudo = document.getElementById('inputPseudo').value;
+    let inputMessage = document.getElementById('inputMessage').value;
+    let dateMessage = document.getElementById('inputDate').value;
 
     if(!inputIdPseudo || !inputMessage){
         console.log("All data are not set");
@@ -97,7 +97,7 @@ function charger() {
 
         let lastIdMessage = $('.messages:last-child').attr('id'); // on récupère l'id le plus récent
         $.ajax({
-            'url': "/api/charger/index.php?id=" + lastIdMessage, // on passe l'id le plus récent au fichier de chargement
+            'url': "/api/charger/index.php?id=" + isNaN(lastIdMessage), // on passe l'id le plus récent au fichier de chargement
             'type': 'GET',
             'success': function (html) {
                 $('#messagesGroup').append(html);

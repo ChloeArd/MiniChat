@@ -17,17 +17,29 @@ if (!empty($_GET['id'])) { // on vérifie que l'id est bien présent et pas vide
     $requete->execute(array("id" => $id));
 
 
+
+
     $messages = null;
 
     // on inscrit tous les nouveaux messages dans une variable
     while ($donnees = $requete->fetch()) {
-        $messages .= "<div id='" . $donnees['id'] . "' class='flexColumn messages'>
+        $idUser_fk = $donnees['user_fk'];
+        $requete2 = $bdd->prepare("SELECT * FROM user WHERE  id = $idUser_fk");
+        $requete2->execute();
+
+        while ($donnees2 = $requete2->fetch()) {
+            $messages .= "<div id='" . $donnees['id'] . "' class='flexColumn messages'>
                 <div class='flexRow width100'>
-                       <p class='width30 colorBlue bold'>" . $donnees['user_fk'] . "</p>
+                       <p class='width30 colorBlue bold'>" . $donnees2['pseudo'] . "</p>
                        <p class='colorGrey'>" . $donnees['date'] . "</p>
                 </div>
                 <p class='text'>" . $donnees['message'] . "</p>
             </div>";
+        }
+
+
+
+
 
 
         echo $messages; // enfin, on retourne les messages à notre script JS

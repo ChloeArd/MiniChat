@@ -33,7 +33,7 @@ date_default_timezone_set("Europe/Paris");
         <input hidden type="text" id="inputIdPseudo" value="<?= $_SESSION['id'] ?>">
         <input hidden type="text" id="inputPseudo" value="<?= $_SESSION['pseudo'] ?>">
         <input hidden  type="text" id="inputDate" value="<?= date('Y-m-d H:i:s')?>">
-        <input accept="text/html"  id="inputMessage" type="text" class="form-control" placeholder="Envoyer un message..." aria-label="Recipient's username" aria-describedby="button-addon2">
+        <input id="inputMessage" type="text" class="form-control" placeholder="Envoyer un message..." aria-label="Recipient's username" aria-describedby="button-addon2">
         <button class="btn btn-outline-primary" type="button" id="buttonSend">Envoyer</button>
         <button class="btn btn-outline-secondary" type="button" id="buttonRefresh"><i class="fas fa-sync-alt"></i></button>
     </div>

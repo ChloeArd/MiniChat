@@ -31,7 +31,7 @@ switch($requestType) {
         $data = json_decode(file_get_contents('php://input'));
         if(isset($data->message, $data->date, $data->user)) {
             $user = intval($data->user);
-            $result = $manager->addMessage(sanitize($data->message), $data->date, $user);
+            $result = $manager->addMessage($data->message, $data->date, $user);
             if(!$result) {
                 $response = [
                     'error' => 'danger',

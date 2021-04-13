@@ -154,12 +154,12 @@ a {
 }
 
 #closeModal {
-    top: 5px;
+    top: 2px;
     right: 30px;
     border: none;
     background-color: grey;
     color: white;
-    padding: 8px;
+    padding: 6px;
     border-radius: 5px;
     font-size: 15px;
 }

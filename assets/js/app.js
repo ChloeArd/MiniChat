@@ -113,7 +113,7 @@ function charger() {
             }
         });
         charger();
-    }, 2000);
+    }, 1000);
 }
 
 /**

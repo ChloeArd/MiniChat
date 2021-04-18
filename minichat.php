@@ -1,5 +1,7 @@
 <?php
 session_start();
+
+if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 date_default_timezone_set("Europe/Paris");
 
 
@@ -59,3 +61,7 @@ if (isset($_GET['success'])) {
 
 </body>
 </html>
+
+<?php
+}
+    ?>

@@ -21,6 +21,9 @@ if (isset($_GET['error'])){
         case '4':
             $return = "Problème d'inscription.";
             break;
+        case '5':
+            $return = "Le mot de passe ne contient pas de majuscule ou de chiffres ou de minuscule ou plus petit que 10 caractères";
+            break;
     }
 }
 elseif (isset($_GET['success'])) {

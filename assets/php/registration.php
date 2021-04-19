@@ -29,10 +29,20 @@ if (isset($_POST["pseudo"], $_POST["password"], $_POST["email"])) {
         }
         else {
             if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                $sql = "INSERT INTO user VALUES (null, '$pseudo', '$email', '$encryptedPassword')";
+                $maj = preg_match('@[A-Z]@', $password);
+                $min = preg_match('@[a-z]@', $password);
+                $number = preg_match('@[0-9]@', $password);
 
-                $bdd->exec($sql);
-                header("Location: ../../index.php?success=0");
+                if($maj && $min && $number && strlen($password) > 10) {
+                    $sql = "INSERT INTO user VALUES (null, '$pseudo', '$email', '$encryptedPassword')";
+
+                    $bdd->exec($sql);
+                    header("Location: ../../index.php?success=0");
+                }
+                else {
+                    header("Location: ../../index.php?error=5");
+                }
+
             }
             else {
                 echo "L'email n'est pas valide !";

@@ -66,6 +66,66 @@ if (buttonSend) {
     });
 }
 
+// Connection with Ajax
+if ($("#buttonConnection")) {
+    $("#connection").click(function () {
+        $.ajax({
+            'type': 'POST',
+            'url': '../assets/php/connection.php',
+            'data': {
+                'email': $("#emailConnection").val(),
+                'password': $("#passwordConnection").val()
+            },
+            'success': function (data) {
+                if(data === "success"){
+                    window.location.href = "minichat.php?success=0";
+                }
+                if (data === "error=2") {
+                    window.location.href = "index.php?error=2";
+                }
+                if (data === "error=3"){
+                    window.location.href = "index.php?error=3";
+                }
+            }
+        });
+    });
+}
+
+
+// registration with Ajax
+if ($("#buttonRegistration")) {
+    $("#registration").click(function () {
+        $.ajax({
+            'type': 'POST',
+            'url': '../assets/php/registration.php',
+            'data': {
+                'pseudo': $("#pseudoRegistration").val(),
+                'password': $("#passwordRegistration").val(),
+                'email': $("#emailRegistration").val()
+            },
+            'success': function (data) {
+                if(data === "success") {
+                    window.location.href = "index.php?success=0";
+                }
+                if (data === "error=0") {
+                    window.location.href = "index.php?error=0";
+                }
+                if (data === "error=5") {
+                    window.location.href = "index.php?error=5";
+                }
+                if (data === "error=1") {
+                    window.location.href = "index.php?error=1";
+                }
+                if (data === "error=4") {
+                    window.location.href = "index.php?error=4"
+                }
+            }
+        });
+    });
+}
+
+
+
 let buttonRefresh = document.getElementById("buttonRefresh");
 
 //Refresh the page for display the messages.
@@ -93,8 +153,8 @@ function charger() {
     setTimeout(function () {
         let lastIdMessage = $('.messages:first').attr('id'); // We get the last ID
         $.ajax({
-            'url': "/api/charger/index.php?id=" + lastIdMessage, // We pass the last ID to the load file
             'type': 'GET',
+            'url': "/api/charger/index.php?id=" + lastIdMessage, // We pass the last ID to the load file
             'success': function (html) {
                 $('#messagesGroup').prepend(html); // We add the new message at the end
             }

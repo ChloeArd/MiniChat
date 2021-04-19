@@ -22,7 +22,7 @@ if (isset($_GET['error'])){
             $return = "Problème d'inscription.";
             break;
         case '5':
-            $return = "Le mot de passe ne contient pas de majuscule ou de chiffres ou de minuscule ou plus petit que 10 caractères";
+            $return = "Le mot de passe ne contient pas de majuscule ou de chiffres ou de minuscule ou plus petit que 8 caractères";
             break;
     }
 }
@@ -70,20 +70,20 @@ elseif (isset($_GET['success'])) {
                         <h5 class="modal-title" id="exampleModalLabel">Connexion <i class="fas fa-user-circle"></i></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="post" action="./assets/php/connection.php">
+                    <form method="post" >
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="emailConnection" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="emailConnection" name="email" required>
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="passwordConnection" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="passwordConnection" name="password" required>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <input type="submit" class="btn btn-primary" value="Se connecter">
+                            <input type="submit" id="connection" class="btn btn-primary" value="Se connecter">
                         </div>
                     </form>
                 </div>
@@ -102,24 +102,24 @@ elseif (isset($_GET['success'])) {
                         <h5 class="modal-title" id="exampleModalLabel">Inscription <i class="fas fa-user-circle"></i></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form method="post" action="./assets/php/registration.php">
+                    <form method="post" action="assets/php/registration.php">
                         <div class="modal-body">
                             <div class="mb-3">
-                                <label for="pseudo" class="form-label">Pseudo</label>
-                                <input type="text" class="form-control" id="pseudo" name="pseudo" required>
+                                <label for="pseudoRegistration" class="form-label">Pseudo</label>
+                                <input type="text" class="form-control" id="pseudoRegistration" name="pseudo" required>
                             </div>
                             <div class="mb-3">
-                                <label for="email" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="email" name="email" required>
+                                <label for="emailRegistration" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="emailRegistration" name="email" required>
                             </div>
                             <div class="mb-3">
-                                <label for="password" class="form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <label for="passwordRegistration" class="form-label">Mot de passe</label>
+                                <input type="password" class="form-control" id="passwordRegistration" name="password" required>
                             </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <input type="submit" class="btn btn-primary" value="S'inscrire">
+                            <input type="submit" id="registration" class="btn btn-primary" value="S'inscrire">
                         </div>
                     </form>
                 </div>
@@ -129,6 +129,7 @@ elseif (isset($_GET['success'])) {
 
     <script src="https://kit.fontawesome.com/351e9300a0.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="assets/js/app.js"></script>
 </body>
 </html>

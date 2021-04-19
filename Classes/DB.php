@@ -36,5 +36,4 @@ class DB {
         }
         return self::$dbInstance;
     }
-
 }

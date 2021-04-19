@@ -1,5 +1,4 @@
 <?php
-
 use MiniChat\Classes\DB;
 
 require_once "../../assets/php/functions.php";
@@ -32,7 +31,6 @@ if (!empty($_GET['id'])) { // We check that the id is present and not empty
                 <p class='text'>" . $donnees['message'] . "</p>
             </div>";
         }
-
         echo $messages; // We return the messages to our JS script
     }
 }

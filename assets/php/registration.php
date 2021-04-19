@@ -50,8 +50,6 @@ if (isset($_POST["pseudo"], $_POST["password"], $_POST["email"])) {
             }
         }
     }
-
-
 }
 else {
     header("Location: ../../index.php?error=4");

@@ -34,4 +34,3 @@ if (!empty($_GET['id'])) { // We check that the id is present and not empty
         echo $messages; // We return the messages to our JS script
     }
 }
-

@@ -1,6 +1,3 @@
-/**
- * My in "messagesGroup", all messages enter in DB by registered users.
- */
 let buttonSend = document.getElementById('buttonSend');
 let messagesGroup = document.getElementById('messagesGroup');
 
@@ -34,13 +31,13 @@ if (buttonSend) {
     buttonSend.addEventListener('click', function (e) {
         e.preventDefault();
         let inputIdPseudo = document.getElementById('inputIdPseudo').value;
-        let inputPseudo = document.getElementById('inputPseudo').value;
         let inputMessage = document.getElementById('inputMessage').value;
         let dateMessage = document.getElementById('inputDate').value;
 
         if (!inputIdPseudo || !inputMessage) {
             console.log("All data are not set");
-        } else {
+        }
+        else {
             let xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 const response = JSON.parse(xhr.responseText);
@@ -55,7 +52,6 @@ if (buttonSend) {
                     }, 5000);
                 }
             }
-
             const messageData = {
                 'message': inputMessage,
                 'date': dateMessage.toLocaleString(),
@@ -66,18 +62,7 @@ if (buttonSend) {
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify(messageData));
         }
-
-        //add a new messages in the end of "messagesGroup" after pressing send / "envoyer" -> so that it is dynamic.
-        /*$("#messagesGroup").append("<div class='flexColumn messages'>" +
-            "<div class='flexRow width100'>" +
-            "<p class='width30 colorBlue bold'>" + inputPseudo + "</p>" +
-            "<p class='colorGrey'>" + dateMessage.toLocaleString() + "</p>" +
-            "</div>" +
-            "<p class='text'>" + inputMessage + "</p>" +
-            "</div>");
-            */
         document.getElementById("inputMessage").value = "";
-
     });
 }
 
@@ -127,4 +112,3 @@ function closeModal (idModal) {
         document.getElementById(idModal).style.display = "none";
     });
 }
-

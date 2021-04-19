@@ -94,10 +94,12 @@ charger();
 
 
 if (document.getElementById("error")) {
+    document.getElementById("closeModal").style.display = "block";
     closeModal("error");
 }
 
 if (document.getElementById("success")) {
+    document.getElementById("closeModal").style.display = "block";
     closeModal("success");
 }
 

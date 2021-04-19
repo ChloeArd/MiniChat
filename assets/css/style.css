@@ -162,6 +162,7 @@ a {
     padding: 6px;
     border-radius: 5px;
     font-size: 15px;
+    display: none;
 }
 
 #success {

@@ -150,7 +150,9 @@ if (buttonRefresh) {
     });
 }
 
-charger();
+if ($("#messagesGroup")) {
+    charger();
+}
 
 
 if (document.getElementById("error")) {

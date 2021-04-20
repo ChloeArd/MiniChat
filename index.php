@@ -55,81 +55,81 @@ elseif (isset($_GET['success'])) {
 </head>
 <body>
 
-    <div id='<?= $id?>' class='modal2 colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
-    <h1 id="miniChat">MiniChat <i class="fas fa-comments warning"></i></h1>
+<div id='<?= $id?>' class='modal2 colorWhite'><?= $return?><button id='closeModal' class='buttonClassic'><i class='fas fa-times'></i></button></div>
+<h1 id="miniChat">MiniChat <i class="fas fa-comments warning"></i></h1>
 
-    <main id="connection_registration">
-        <!-- Button for connection -->
-        <button id="buttonConnection" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConnexion">Connexion</button>
+<main id="connection_registration">
+    <!-- Button for connection -->
+    <button id="buttonConnection" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalConnexion">Connexion</button>
 
-        <!-- Modal for connection -->
-        <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Connexion <i class="fas fa-user-circle"></i></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form method="post" >
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label for="emailConnection" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="emailConnection" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="passwordConnection" class="form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="passwordConnection" name="password" required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <input type="submit" id="connection" class="btn btn-primary" value="Se connecter">
-                        </div>
-                    </form>
+    <!-- Modal for connection -->
+    <div class="modal fade" id="modalConnexion" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Connexion <i class="fas fa-user-circle"></i></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form method="post" >
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="emailConnection" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="emailConnection" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordConnection" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="passwordConnection" name="password" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <input type="submit" id="connection" class="btn btn-primary" value="Se connecter">
+                    </div>
+                </form>
             </div>
         </div>
+    </div>
 
 
-        <!-- Button for registration -->
-        <button id="buttonRegistration" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistration">Inscription</button>
+    <!-- Button for registration -->
+    <button id="buttonRegistration" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistration">Inscription</button>
 
-        <!-- Modal for registration -->
-        <div class="modal fade" id="modalRegistration" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Inscription <i class="fas fa-user-circle"></i></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <form method="post" action="assets/php/registration.php">
-                        <div class="modal-body">
-                            <div class="mb-3">
-                                <label for="pseudoRegistration" class="form-label">Pseudo</label>
-                                <input type="text" class="form-control" id="pseudoRegistration" name="pseudo" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="emailRegistration" class="form-label">E-mail</label>
-                                <input type="email" class="form-control" id="emailRegistration" name="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="passwordRegistration" class="form-label">Mot de passe</label>
-                                <input type="password" class="form-control" id="passwordRegistration" name="password" required>
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-                            <input type="submit" id="registration" class="btn btn-primary" value="S'inscrire">
-                        </div>
-                    </form>
+    <!-- Modal for registration -->
+    <div class="modal fade" id="modalRegistration" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Inscription <i class="fas fa-user-circle"></i></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
+                <form method="post">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="pseudoRegistration" class="form-label">Pseudo</label>
+                            <input type="text" class="form-control" id="pseudoRegistration" name="pseudo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailRegistration" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="emailRegistration" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="passwordRegistration" class="form-label">Mot de passe</label>
+                            <input type="password" class="form-control" id="passwordRegistration" name="password" required>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                        <input type="submit" id="registration" class="btn btn-primary" value="S'inscrire">
+                    </div>
+                </form>
             </div>
         </div>
-    </main>
+    </div>
+</main>
 
-    <script src="https://kit.fontawesome.com/351e9300a0.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="assets/js/app.js"></script>
+<script src="https://kit.fontawesome.com/351e9300a0.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>

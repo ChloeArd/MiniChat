@@ -5,4 +5,4 @@ session_unset();
 // We destroy our session.
 session_destroy();
 
-header("Location: ../../index.php?success=1");
+echo "success";

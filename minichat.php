@@ -35,8 +35,8 @@ if (isset($_SESSION['email']) && isset($_SESSION['password'])) {
 
     <header id="menu">
         <h1 id="miniChat2">MiniChat <i class="fas fa-comments warning"></i></h1>
-        <p id="pseudoAccount"><i class="fas fa-user-circle"></i> <?= $_SESSION["pseudo"]?></p>
-        <a href="assets/php/disconnection.php" id="disconnection"><i class="fas fa-power-off"></i></a>
+        <p id="pseudoAccount"><i class="fas fa-user-circle"></i><?= $_SESSION["pseudo"]?></p>
+        <button id="disconnection"><i class="fas fa-power-off"></i></button>
     </header>
 
     <main>

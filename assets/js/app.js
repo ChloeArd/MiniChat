@@ -124,6 +124,21 @@ if ($("#buttonRegistration")) {
     });
 }
 
+// disconnection with Ajax
+$disconnection = $("#disconnection");
+if ($disconnection) {
+    $disconnection.click(function () {
+        $.ajax({
+            'type': 'GET',
+            'url': '../assets/php/disconnection.php',
+            'success': function (data) {
+                if(data === "success") {
+                    window.location.href = "index.php?success=1";
+                }
+            }
+        });
+    });
+}
 
 
 let buttonRefresh = document.getElementById("buttonRefresh");

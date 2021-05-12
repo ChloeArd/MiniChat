@@ -19,7 +19,8 @@ if (!empty($_GET['id'])) { // We check that the id is present and not empty
     while ($donnees = $requete->fetch()) {
         $idUser_fk = $donnees['user_fk'];
         //We retrieve the user who wrote the message thanks to the id user_fk store in message
-        $requete2 = $bdd->prepare("SELECT * FROM user WHERE  id = $idUser_fk");
+        $requete2 = $bdd->prepare("SELECT * FROM user WHERE  id = :user_fk");
+        $requete2->bindParam(':user_fk', $idUser_fk);
         $requete2->execute();
 
         foreach ($requete2->fetchAll() as $donnees2) {

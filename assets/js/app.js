@@ -10,12 +10,12 @@ xhr.onload = function () {
     messages.forEach(message => {
         messagesGroup.innerHTML += `
         <div id='${message.id}' class='flexColumn messages'>
-                <div class='flexRow width100'>
-                       <p class='width30 colorBlue bold'>${message.user['pseudo']}</p>
-                       <p class='colorGrey'>${message.date}</p>
-                </div>
-                <p class='text'>${message.message}</p>
+            <div class='flexRow width100'>
+               <p class='width30 colorBlue bold'>${message.user['pseudo']}</p>
+               <p class='colorGrey'>${message.date}</p>
             </div>
+            <p class='text'>${message.message}</p>
+        </div>
         `;
     });
 }

@@ -26,7 +26,6 @@ xhr.send();
 /**
  * Adding a message to the database.
  */
-
 if (buttonSend) {
     buttonSend.addEventListener('click', function (e) {
         e.preventDefault();
@@ -56,8 +55,7 @@ if (buttonSend) {
                 'message': inputMessage,
                 'date': dateMessage.toLocaleString(),
                 'user': inputIdPseudo,
-            };
-
+            }
             xhr.open('POST', '/api/messages');
             xhr.setRequestHeader('Content-Type', 'application/json');
             xhr.send(JSON.stringify(messageData));
@@ -90,7 +88,6 @@ if ($("#buttonConnection")) {
         });
     });
 }
-
 
 // registration with Ajax
 if ($("#buttonRegistration")) {
@@ -140,7 +137,6 @@ if ($disconnection) {
     });
 }
 
-
 let buttonRefresh = document.getElementById("buttonRefresh");
 
 //Refresh the page for display the messages.
@@ -153,7 +149,6 @@ if (buttonRefresh) {
 if ($("#messagesGroup")) {
     charger();
 }
-
 
 if (document.getElementById("error")) {
     document.getElementById("closeModal").style.display = "block";
@@ -173,7 +168,7 @@ function charger() {
             'type': 'GET',
             'url': "/api/charger/index.php?id=" + lastIdMessage, // We pass the last ID to the load file
             'success': function (html) {
-                $('#messagesGroup').prepend(html); // We add the new message at the end
+                $('#messagesGroup').prepend(html); // We add the new message at first
             }
         });
         charger();

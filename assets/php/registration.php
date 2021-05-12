@@ -14,7 +14,9 @@ if (isset($_POST["pseudo"], $_POST["password"], $_POST["email"])) {
 
     $encryptedPassword = password_hash($password, PASSWORD_BCRYPT);
 
-    $requete = $bdd->prepare("SELECT * FROM user WHERE email = '" . $email . "' OR pseudo = '" . $pseudo ."'");
+    $requete = $bdd->prepare("SELECT * FROM user WHERE email = :email OR pseudo = :pseudo");
+    $requete->bindParam(":email", $email);
+    $requete->bindParam(":password", $password);
     $state = $requete->execute();
 
     if ($state) {

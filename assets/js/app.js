@@ -104,16 +104,16 @@ if ($("#buttonRegistration")) {
                 if(data === "success") {
                     window.location.href = "index.php?success=0";
                 }
-                if (data === "error=0") {
+                else if (data === "error=0") {
                     window.location.href = "index.php?error=0";
                 }
-                if (data === "error=5") {
+                else if (data === "error=5") {
                     window.location.href = "index.php?error=5";
                 }
-                if (data === "error=1") {
+                else if (data === "error=1") {
                     window.location.href = "index.php?error=1";
                 }
-                if (data === "error=4") {
+                else if (data === "error=4") {
                     window.location.href = "index.php?error=4"
                 }
             }
